@@ -1,0 +1,49 @@
+# Global rules
+User-agent: *
+Allow: /$
+Allow: /index.html
+Allow: /about.html
+Allow: /contact.html
+Allow: /privacy.html
+Allow: /terms.html
+Allow: /sitemap.xml
+
+# Protect sensitive content
+Disallow: /images/
+Disallow: /affiliate-disclosure.html
+Disallow: /disclaimer.html
+Disallow: /cookie-policy.html
+Disallow: /earnings-disclaimer.html
+Disallow: /faq.html
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: Rogerbot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# Rate control
+Crawl-delay: 10
+
+# Sitemap location 
+Sitemap: https://freegoldinvestingkit.com/sitemap.xml

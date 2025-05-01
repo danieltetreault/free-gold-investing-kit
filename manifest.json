@@ -1,0 +1,21 @@
+{
+    "name": "Free Gold Investing Kit",
+    "short_name": "Gold Kit",
+    "description": "Learn how to protect your retirement savings with gold investments",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#d4af37",
+    "icons": [
+        {
+            "src": "images/favicon16x16px.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "images/favicon32x32px.webp",
+            "sizes": "32x32",
+            "type": "image/webp"
+        }
+    ]
+}
