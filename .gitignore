@@ -1,11 +1,18 @@
-# Dependencies
-node_modules/,
+# Dependency directories
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 
 # Environment variables
 .env
 
-# OS files
+# OS specific files
 .DS_Store
+Thumbs.db
 
-# IDE settings
+# IDE specific files
+.idea/
 .vscode/
+*.sublime-project
+*.sublime-workspace
