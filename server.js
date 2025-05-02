@@ -19,11 +19,23 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_PASS
+    },
+    debug: true, // Show debug output
+    logger: true // Log information about the mail
+});
+
+// Verify transporter configuration
+transporter.verify(function(error, success) {
+    if (error) {
+        console.error('Transporter verification failed:', error);
+    } else {
+        console.log('Server is ready to take our messages');
     }
 });
 
 // Handle form submission
 app.post('/send-email', (req, res) => {
+    console.log('Received form submission:', req.body);
     const { name, email, message } = req.body;
 
     const mailOptions = {
@@ -37,11 +49,14 @@ app.post('/send-email', (req, res) => {
         `
     };
 
+    console.log('Attempting to send email with options:', mailOptions);
+    
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log(error);
+            console.error('Error sending email:', error);
             res.status(500).send('Error sending email');
         } else {
+            console.log('Email sent successfully:', info.response);
             res.redirect('/thank-you.html');
         }
     });

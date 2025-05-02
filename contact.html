@@ -187,6 +187,12 @@
             submitButton.disabled = true;
             loadingSpinner.style.display = 'inline-block';
             
+            console.log('Submitting form with data:', {
+                name: form.name.value,
+                email: form.email.value,
+                message: form.message.value
+            });
+            
             try {
                 const response = await fetch('http://localhost:5500/send-email', {
                     method: 'POST',
@@ -199,6 +205,9 @@
                         message: form.message.value
                     })
                 });
+                
+                console.log('Response status:', response.status);
+                console.log('Response redirected:', response.redirected);
                 
                 if (response.redirected) {
                     window.location.href = response.url;
