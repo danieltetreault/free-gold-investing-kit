@@ -11,7 +11,20 @@ const PORT = 5500;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static(path.join(__dirname)));
+
+// Static file serving with cache control
+app.use(express.static(path.join(__dirname), {
+  setHeaders: (res, filePath) => {
+    // Set long cache for images and other static assets
+    if (filePath.match(/\.(jpg|jpeg|png|webp|gif|ico|css|js)$/)) {
+      // Cache for 1 week (604800 seconds)
+      res.setHeader('Cache-Control', 'public, max-age=604800');
+    } else {
+      // Default cache for HTML files - shorter time
+      res.setHeader('Cache-Control', 'public, max-age=3600');
+    }
+  }
+}));
 
 // Configure email transporter using environment variables
 const transporter = nodemailer.createTransport({
