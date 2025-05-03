@@ -131,7 +131,7 @@
         <p>If you have any questions, comments, or concerns, please feel free to reach out to us using the form below.</p>
         <div id="successMessage" class="message success">Thank you for your message! We'll get back to you soon.</div>
         <div id="errorMessage" class="message error">Sorry, there was an error sending your message. Please try again.</div>
-        <form id="contactForm">
+        <form id="contactForm" action="https://formspree.io/f/xbjnkdvr" method="POST">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your Name" required>
 
@@ -170,10 +170,7 @@
             </div>
         </footer>
     <script>
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const form = this;
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             const submitButton = document.getElementById('submitButton');
             const loadingSpinner = document.getElementById('loadingSpinner');
             const successMessage = document.getElementById('successMessage');
@@ -187,50 +184,11 @@
             submitButton.disabled = true;
             loadingSpinner.style.display = 'inline-block';
             
-            console.log('Submitting form with data:', {
-                name: form.name.value,
-                email: form.email.value,
-                message: form.message.value
-            });
+            // Formspree will handle the form submission
+            // This script just handles the UI feedback
             
-            try {
-                const response = await fetch('http://localhost:5500/send-email', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        name: form.name.value,
-                        email: form.email.value,
-                        message: form.message.value
-                    })
-                });
-                
-                console.log('Response status:', response.status);
-                console.log('Response redirected:', response.redirected);
-                
-                if (response.redirected) {
-                    window.location.href = response.url;
-                    return;
-                }
-                
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                
-                // Show success message
-                form.reset();
-                successMessage.style.display = 'block';
-                
-            } catch (error) {
-                // Show error message
-                errorMessage.style.display = 'block';
-                console.error('Error:', error);
-            } finally {
-                // Re-enable form and hide loading state
-                submitButton.disabled = false;
-                loadingSpinner.style.display = 'none';
-            }
+            // The form will be submitted normally, and Formspree will redirect back
+            // We don't need to prevent default or handle the submission ourselves
         });
     </script>
 </body>

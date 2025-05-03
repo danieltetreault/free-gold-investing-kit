@@ -30,11 +30,16 @@
     <!-- Page title -->
     <title>Free Gold Investing Kit - Secure Your Financial Future</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts with display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome for icons - using CDN with defer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Inline CSS for styling -->
     <style>
@@ -88,7 +93,13 @@
             color: #fff;
             text-shadow: 2px 2px 4px #000;
             margin: 0;
-            background-attachment: fixed;
+        }
+        
+        /* Only use fixed background on desktop */
+        @media (min-width: 769px) {
+            .hero {
+                background-attachment: fixed;
+            }
         }
 
         .hero h2 {
@@ -255,8 +266,14 @@
         .parallax-wrapper {
             position: relative;
             background: url('./images/hero3.jpg') no-repeat center center/cover;
-            background-attachment: fixed;
             padding: 60px 0;
+        }
+        
+        /* Only use fixed background on desktop */
+        @media (min-width: 769px) {
+            .parallax-wrapper {
+                background-attachment: fixed;
+            }
         }
 
         .parallax-content {
@@ -338,17 +355,17 @@
             <!-- Features section -->
             <div class="features">
                 <div class="feature">
-                    <img src="./images/physical-gold.jpg" alt="Physical Gold">
+                    <img src="./images/physical-gold.jpg" alt="Physical Gold" width="300" height="200">
                     <h3>Physical Gold</h3>
                     <p>Discover the benefits of owning physical gold and how it can secure your financial future.</p>
                 </div>
                 <div class="feature">
-                    <img src="./images/gold-ira.jpg" alt="Gold IRA">
+                    <img src="./images/gold-ira.jpg" alt="Gold IRA" width="300" height="200">
                     <h3>Gold IRA</h3>
                     <p>Learn how to roll over your 401(k) into a gold IRA and protect your retirement savings.</p>
                 </div>
                 <div class="feature">
-                    <img src="./images/expert-tips.jpg" alt="Expert Tips">
+                    <img src="./images/expert-tips.jpg" alt="Expert Tips" width="300" height="200">
                     <h3>Expert Tips</h3>
                     <p>Get expert advice on maximizing your gold investments for long-term growth.</p>
                 </div>
