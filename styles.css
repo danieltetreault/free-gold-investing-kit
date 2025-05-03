@@ -105,9 +105,10 @@ header p {
 }
 
 .feature h3 {
-    color: #8b6d0b; /* Darker gold for better contrast */
+    color: #6d5400; /* Even darker gold for better contrast */
     margin: 10px 0;
     font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add subtle shadow for better readability */
 }
 
 .feature p {
@@ -131,9 +132,10 @@ header p {
 }
 
 .why-gold .column h3 {
-    color: #8b6d0b; /* Darker gold for better contrast */
+    color: #6d5400; /* Even darker gold for better contrast */
     margin: 10px 0;
     font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Add subtle shadow for better readability */
 }
 
 .why-gold .column p {

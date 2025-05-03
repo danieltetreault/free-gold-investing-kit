@@ -53,7 +53,7 @@ app.post('/send-email', (req, res) => {
 
     const mailOptions = {
         from: email,
-        to: 'digotdan@gmail.com',
+        to: process.env.CONTACT_EMAIL || 'contact@example.com',
         subject: `New Contact Form Message from ${name}`,
         text: `
             Name: ${name}
