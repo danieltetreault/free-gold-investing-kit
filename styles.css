@@ -282,3 +282,207 @@ picture {
 .no-webp .parallax-wrapper {
     background: url('./images/hero3.jpg') no-repeat center center/cover;
 }
+
+/* Contact Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background: #218838;
+}
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: none;
+}
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #28a745;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Thank You Page Styles */
+.thank-you-message {
+    margin: 40px 0;
+    text-align: center;
+}
+.thank-you-message h2 {
+    color: #d4af37;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.thank-you-message p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+.home-button {
+    display: inline-block;
+    background: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.home-button:hover {
+    background: #218838;
+}
+
+/* Downloads Page Styles */
+.download-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.download-item {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+.download-title {
+    color: #6d5400;
+    margin-top: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.download-description {
+    margin-bottom: 20px;
+}
+.download-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.download-instructions {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-left: 4px solid #6d5400;
+    font-size: 0.9em;
+}
+.download-instructions i {
+    color: #6d5400;
+    margin-right: 5px;
+}
+.email-signup {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: center;
+}
+.email-signup h3 {
+    color: #6d5400;
+    margin-top: 0;
+}
+.email-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.email-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.email-form button {
+    background-color: #6d5400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.email-form button:hover {
+    background-color: #8a6b00;
+}
+
+/* Legal Page Styles */
+.section-divider {
+    border-top: 1px solid #eee;
+    margin: 30px 0;
+}
+.section-title {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.contact-section {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+/* Sitemap Styles */
+ul.sitemap {
+    list-style-type: none;
+    padding: 0;
+}
+ul.sitemap li {
+    margin: 10px 0;
+}
+ul.sitemap li a {
+    color: #007BFF;
+    text-decoration: none;
+}
+ul.sitemap li a:hover {
+    text-decoration: underline;
+}
